@@ -76,4 +76,39 @@ public class MainActivityTest {
         Espresso.pressBack(); //Back button
     }
 
+    @Test
+    public void UItestTask(){
+
+        onView(withId(R.id.button_add)).perform(click()); //Click add button to add a city to the list
+        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("ABC")); //Type a city name
+        Espresso.pressBack();
+        onView(withId(R.id.button_confirm)).perform(click()); //Confirm the city name and add to the list
+
+        onView(withId(R.id.button_add)).perform(click()); //Click add button to add a city to the list
+        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("BCD")); //Type a city name
+        Espresso.pressBack();
+        onView(withId(R.id.button_confirm)).perform(click()); //Confirm the city name and add to the list
+
+        onView(withId(R.id.button_add)).perform(click()); //Click add button to add a city to the list
+        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("CDE")); //Type a city name
+        Espresso.pressBack();
+        onView(withId(R.id.button_confirm)).perform(click()); //Confirm the city name and add to the list
+
+        onView(withId(R.id.button_add)).perform(click()); //Click add button to add a city to the list
+        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("DEF")); //Type a city name
+        Espresso.pressBack();
+        onView(withId(R.id.button_confirm)).perform(click()); //Confirm the city name and add to the list
+
+        onView(withId(R.id.button_add)).perform(click()); //Click add button to add a city to the list
+        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("EFG")); //Type a city name
+        Espresso.pressBack();
+        onView(withId(R.id.button_confirm)).perform(click()); //Confirm the city name and add to the list
+
+
+        onData(anything()).inAdapterView(withId(R.id.city_list)).atPosition(2).perform(click());
+        onView(withId(R.id.second)).check(matches(isDisplayed()));
+        onView(withText("BCD")).check(matches(isDisplayed()));
+        onView(withId(R.id.back)).perform(click());
+        onView(withId(R.id.main)).check(matches(isDisplayed()));
+    }
 }
