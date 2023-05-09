@@ -107,7 +107,7 @@ public class MainActivityTest {
 
         onData(anything()).inAdapterView(withId(R.id.city_list)).atPosition(2).perform(click());
         onView(withId(R.id.second)).check(matches(isDisplayed()));
-        onView(withText("BCD")).check(matches(isDisplayed()));
+        onView(withText("CDE")).check(matches(isDisplayed()));
         onView(withId(R.id.back)).perform(click());
         onView(withId(R.id.main)).check(matches(isDisplayed()));
     }
